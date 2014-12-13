@@ -304,12 +304,12 @@ SimpleWebRTC.prototype.joinRoom = function (name, cb) {
         } else {
             var id,
                 client,
-                type_array = {"screen":false, "audio":false, "video":true},
+                type,
                 peer;
             for (id in roomDescription.clients) {
                 client = roomDescription.clients[id];
-                for (var type in type_array) {
-                    if(type_array[type]) {
+                for (type in client) {
+                    if(client[type]) {
                         peer = self.webrtc.createPeer({
                             id: id,
                             type: type,
@@ -7026,7 +7026,7 @@ function isBuf(obj) {
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],52:[function(require,module,exports){
 module.exports=require(45)
-},{"/Users/user/Documents/WEBRTC/SimpleWebRTC/node_modules/socket.io-client/node_modules/has-binary/node_modules/isarray/index.js":45}],53:[function(require,module,exports){
+},{"/Users/user/Documents/WEBRTC/CTechSimpleWebRTC/node_modules/socket.io-client/node_modules/has-binary/node_modules/isarray/index.js":45}],53:[function(require,module,exports){
 /*! JSON v3.2.6 | http://bestiejs.github.io/json3 | Copyright 2012-2013, Kit Cambridge | http://kit.mit-license.org */
 ;(function (window) {
   // Convenience aliases.

@@ -303,12 +303,12 @@ SimpleWebRTC.prototype.joinRoom = function (name, cb) {
         } else {
             var id,
                 client,
-                type_array = {"screen":false, "audio":false, "video":true},
+                type,
                 peer;
             for (id in roomDescription.clients) {
                 client = roomDescription.clients[id];
-                for (var type in type_array) {
-                    if(type_array[type]) {
+                for (type in client) {
+                    if(client[type]) {
                         peer = self.webrtc.createPeer({
                             id: id,
                             type: type,
